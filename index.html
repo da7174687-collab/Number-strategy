@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NumberScope — Mobile Number Inspector</title>
+  <meta name="description" content="A privacy-respecting mobile number information lookup dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+  <header class="nav">
+    <div class="brand"><span class="brand-mark">N</span><span>NumberScope</span></div>
+    <div class="nav-pill">Privacy-first lookup</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">MOBILE NUMBER INTELLIGENCE</div>
+      <h1>Understand a number.<br><span>Respect the person.</span></h1>
+      <p class="hero-copy">Check public, non-sensitive number metadata such as country, carrier and line type. This site does <strong>not</strong> expose a person's live GPS location.</p>
+
+      <div class="search-card">
+        <div class="input-wrap">
+          <span class="phone-icon">＋</span>
+          <input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" aria-label="Mobile number">
+        </div>
+        <button id="lookupBtn">Inspect number <span>→</span></button>
+        <div class="hint">Use international format, e.g. +91 98765 43210</div>
+      </div>
+      <div id="error" class="error" role="alert"></div>
+    </section>
+
+    <section id="result" class="results hidden">
+      <div class="section-head">
+        <div><div class="eyebrow">LOOKUP RESULT</div><h2>Number profile</h2></div>
+        <div id="status" class="status">READY</div>
+      </div>
+
+      <div class="grid">
+        <article class="card main-card">
+          <div class="card-label">FORMATTED NUMBER</div>
+          <div id="formatted" class="big-value">—</div>
+          <div id="validBadge" class="valid-badge">● Awaiting lookup</div>
+        </article>
+        <article class="card">
+          <div class="card-label">COUNTRY</div>
+          <div id="country" class="value">—</div>
+          <div id="countryCode" class="muted">—</div>
+        </article>
+        <article class="card">
+          <div class="card-label">LINE TYPE</div>
+          <div id="lineType" class="value">—</div>
+          <div class="muted">Public metadata</div>
+        </article>
+        <article class="card">
+          <div class="card-label">CARRIER</div>
+          <div id="carrier" class="value">—</div>
+          <div class="muted">If available</div>
+        </article>
+        <article class="card">
+          <div class="card-label">TIME ZONES</div>
+          <div id="timezone" class="value small-value">—</div>
+          <div class="muted">Number-associated zone(s)</div>
+        </article>
+      </div>
+
+      <div class="notice">
+        <span class="notice-icon">✓</span>
+        <div><strong>Location safety</strong><p>Phone-number metadata cannot legitimately provide someone's live GPS position. A live location feature should use explicit device-owner consent and a secure location-sharing system.</p></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><span>01</span><div><h3>Public metadata</h3><p>Country, carrier and line type where a supported data source provides them.</p></div></div>
+      <div class="feature"><span>02</span><div><h3>GitHub ready</h3><p>Static HTML, CSS and JavaScript. Deploy directly with GitHub Pages.</p></div></div>
+      <div class="feature"><span>03</span><div><h3>Consent-aware</h3><p>No hidden GPS tracking, device fingerprinting or unauthorized location access.</p></div></div>
+    </section>
+  </main>
+
+  <footer>NumberScope · Built for legitimate number intelligence · No live-location tracking</footer>
+  <script src="script.js"></script>
+</body>
+</html>
